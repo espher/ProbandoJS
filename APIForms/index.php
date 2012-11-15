@@ -1,7 +1,51 @@
 
-<!-- api form html5 -->
+<!-- api form html5 
+Nuevos atributos del API Forms
 
-<!--
+Placeholder  -  representa una referencia corta una palabra o frase para ayudar al usuario esta se representa dentro del input
+ej. <input type="text" name="nombre" id="nombre" placeholder="aqui va tu nombre">
+
+
+Required  -  es un atributo boleano no dejara que el formulario se envie en caso de que este sea false el atributo required revisa que el input este lleno y validado
+ej. <input type="email" name="tuemail" required>
+
+
+Multiple  -   este es otro atributo boleano qu puede ser usado en los campos de email o file para permitir multiples ingresos de estos mismos 
+ej. <input type="email" name="tuemail" multiple>
+
+
+Autofocuso  -  este nuevo atributo de la API forms de HTML5 sirve para poner el foco automaticamente en el input donde lo hemos colocado
+
+ej. <input type="email" name="tuemail" autofocus>
+
+
+Pattern  -  Este atributo en lo personal es unos de mis preferidos, patterns es un atributo de validacion que puede ser personalizado mediante expresiones regulares, incluso puede incluir el atributo tittle  para personalizar el mensaje de error en est caso solo aceptaremos como maximo cinco numeros....
+
+ej.   <input pattern="[0-9]{5}" type="text" name="numero" title="solo se aceptan 5 numeros">
+
+
+datalist  -   Este atributo funciona  para realizar una lista tipo de sugerencia o autoacmpletador para el usuario que va a escribir dentro de nuestro input 
+
+ej
+<datalist id="informacion">  
+				<option value="123123123" label="Teléfono 1">  
+				<option value="456456456" label="Teléfono 2"> 
+</datalist>
+<input type="tel" name="telefono" id="telefono" list="informacion"><br>
+
+
+Progress   -  NOTA: este atributo no es espesifico de los formularios pero como representa el progreso de una tarea usualmente los formularios son parte de una tarea, "progress" es una barra de progreso donde su atributo max espesifica el valor maximo de este barra y value el valor que se ha recorrido de esta barra
+
+ej. <progress max="100" value="50"></progress>
+
+
+
+Meter    -   Similiar a progress pero la gran diferencia es que meter no es usado para mostrar un progreso si no una escala o una medida como el numero de visitas por asi decirlo
+<meter max="100" value="50"></meter>
+
+
+
+
 <!DOCTYPE html> 
 <html lang="es"> 
 <head> 
@@ -26,11 +70,12 @@
 			<input type="color" name="micolor" id="micolor"><br>
 			<input type="email" name="miemail" id="miemail" multiple><br>
 			<datalist id="informacion">  
-				<option value=”123123123” label=”Teléfono 1”>  
-				<option value=”456456456” label=”Teléfono 2”> 
+				<option value="123123123" label="Teléfono 1">  
+				<option value="456456456" label="Teléfono 2"> 
 			</datalist><br>
 			<input type="tel" name="telefono" id="telefono" list="informacion"><br>
-
+			<progress max="100" value="50"></progress>
+			<meter max="100" value="50"></meter>
 		</form>  
 	</section> 
 </body>
@@ -139,6 +184,8 @@ Cada vez que el usuario envía el formulario, un evento es disparado si un campo
 Validación en tiempo real 
 Cuando abrimos el archivo con la plantilla del Listado 6-24 en el navegador, podremos notar que no existe una validación en tiempo real. Los campos son sólo validados cuando el botón “ingresar” es presionado. Para hacer más práctico nuestro sistema personalizado de validación, tenemos que aprovechar los atributos provistos por el objeto ValidityState. 
 -->
+
+<!--
  <!DOCTYPE html> 
  <html lang="es"> 
  <head>  
@@ -196,3 +243,4 @@ Cuando abrimos el archivo con la plantilla del Listado 6-24 en el navegador, pod
 </section> 
 </body> 
 </html>
+-->
